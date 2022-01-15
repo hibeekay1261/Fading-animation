@@ -1,0 +1,191 @@
+let names = ['john', 'bobo', 'barry', 'olga', 'ben']
+
+// length.
+
+console.log(names.length)
+console.log(name[names.lenth - 1])
+// concat
+const lastNames = ['pepper', 'onions', 'banana']
+const allNames = names.concat(lastNames)
+console.log(allNames)
+
+// reverse
+console.log(allNames.reverse())
+
+// unshift
+allNames.unshift('susy')
+// shift
+allNames.shift()
+
+// push
+allNames.push('susy')
+
+// pop
+allNames.pop('susy')
+console.log(allNames)
+// splice- mutate original array
+
+const specificName = allNames.splice(2, 1)
+console.log(specificName)
+console.log(allNames)
+
+// Array and for loops
+
+const names = ['anna', 'susy', 'bob']
+const lastName = 'shakeandbake'
+let newArray = []
+
+// for loop
+for (let i = 0; i <= names.length; i++) {
+  console.log(names[i])
+  const fullName = `${names[i]} ${lastName}`
+  newArray.push(fullName)
+}
+
+console.log(names)
+console.log(newArray)
+const gas = [20, 40, 100]
+const food = [10, 40, 50]
+
+function calculateTotal(arr) {
+  let total = 0
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i]
+  }
+
+  if (total > 100) {
+    console.log(`whoa! you are spending way too much`)
+    return total
+  }
+  console.log(`you are good total is less than 100`)
+  return total
+}
+
+const gasTotal = calculateTotal(gas)
+const foodTotal = calculateTotal(food)
+const randomTotal = calculateTotal([200, 4000, 500, 1])
+
+console.log({ gas: gasTotal, food: foodTotal, randomTotal })
+// callback functions
+
+function morning(name) {
+  return `Good morning ${name.toUpperCase()}`
+}
+
+function afternoon(name) {
+  return `Good Afternoon ${name.repeat(2)}`
+}
+
+function greet(name, callback) {
+  const myName = 'john'
+  console.log(`${callback(name)}, my name is ${myName}`)
+}
+
+greet('ibukun', morning)
+greet('ayomide', afternoon)
+
+
+
+// powerful Array methods
+// forEach, map, filter, find, reduce
+// Iterate over array - no for loop required
+// Accept callback function as an argument, calls Callback against each item in a array. Reference  in the callback parameter.
+
+const people = [
+  {
+    name: 'bob',
+    age: 20,
+    position: 'developer',
+    id: 1,
+  },
+  { name: 'Sarah', age: 35, position: 'hairdresser', id: 2, salary: 200 },
+  { name: 'bob', age: 40, position: 'teacher', id: 3, salary: 400 },
+  { name: 'susy', age: 35, position: 'legend', id: 4, salary: 500 },
+]
+// function showPerson(person) {
+//   console.log(person.name.toUpperCase())
+// }
+// people.forEach(function (item) {
+//   console.log(item.name.toUpperCase())
+// })
+
+// const ages = people.map(function (item) {
+//   return item.age + 4
+// })
+
+// const newPeople = people.map(function (person) {
+//   return {
+//     firstName: person.name.toUpperCase(),
+//     oldAge: person.age + 20,
+//   }
+// })
+
+// const names = people.map(function (person) {
+//   return `<h1>${person.name}</h1>`
+// })
+
+// document.body.innerHTML = names.join('')
+// console.log(names)
+
+// const youngPeople = people.filter(function (person) {
+//   return person.age <= 25
+// })
+
+// console.log(youngPeople)
+
+// const names = ['bob', 'peter', 'susy']
+
+// const person = people.find(function (person) {
+//   return person.id === 2
+// })
+
+// console.log(person)
+
+const total = people.reduce(function (acc, currItem) {
+  console.log(`total ${acc}`)
+  console.log(`current money : ${currItem.salary}`)
+  acc += currItem.salary
+  return acc
+}, 200)
+console.log(total)
+
+
+const months = [
+//   'January',
+//   'Feburary',
+//   'March',
+//   'April',
+//   'May',
+//   'June',
+//   'July',
+//   'August',
+//   'September',
+//   'October',
+//   'November',
+//   'December',
+// ]
+
+// const days = [
+//   'monday',
+//   'tuesday',
+//   'wednesday',
+//   'Thursday',
+//   'Friday',
+//   'Saturday',
+//   'Monday',
+// ]
+
+// const date = new Date()
+// const month = date.getMonth()
+// const time = date.getMinutes()
+// console.log(months[month])
+
+// const day = date.getDay()
+
+// console.log(date.getFullYear())
+
+// const sentence = `${days[day]}, ${date.getDate()} ${
+//   months[month]
+// } ${date.getFullYear()} ${time}`
+
+// document.body.innerHTML = sentence
